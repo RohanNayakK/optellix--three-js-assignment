@@ -1,0 +1,38 @@
+{
+  "name": "optellix--three-js-assignment",
+  "version": "1.0.0",
+  "description": "Three JS Assignment",
+  "main": "index.js",
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "assets",
+        "staticOutDir": "assets"
+      }
+    ]
+  },
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RohanNayakK/optellix--three-js-assignment.git"
+  },
+  "keywords": [
+    "Three",
+    "JS",
+    "Assignment",
+    "Optellix"
+  ],
+  "author": "Rohan Nayak K",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RohanNayakK/optellix--three-js-assignment/issues"
+  },
+  "homepage": "https://github.com/RohanNayakK/optellix--three-js-assignment#readme",
+  "dependencies": {
+    "three": "^0.149.0",
+    "vite": "^4.0.4"
+  }
+}
