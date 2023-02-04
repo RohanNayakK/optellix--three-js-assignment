@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Assignment</title>
+    <title>Assignment-Rohan Nayak</title>
     <link rel="stylesheet" href="style.css">
-    <script defer type="module" src="index.js"></script>
-
+    <script type="module" defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -30,28 +29,56 @@
             </u>
             <h2>Step 1</h2>
             <h3>Create Landmarks (Points)</h3>
+            <button class="primary-btn" >Update</button>
+
             <ul class="radio-button-group">
                 <li>
                     <label for="femur-center">Femur Center</label>
-                    <input type="radio" id="femur-center" name="femur-center" value="femur-center">
+                    <input class="landmark-points" type="radio" id="femur-center" name="landmark-pt" value="femur-center"/>
                 </li>
                 <li>
-                    <label for="femur-center">Hip Center</label>
-                    <input type="radio" id="hip-center" name="femur-center" value="hip-center">
+                    <label for="hip-center">Hip Center</label>
+                    <input class="landmark-points"  type="radio" id="hip-center" name="landmark-pt" value="hip-center"/>
                 </li>
 
                 <li>
-                    <label for="femur-center">Femur Proximal Canal</label>
-                    <input type="radio" id="femur-proximal-canal" name="femur-proximal-canal" value="femur-proximal-canal">
+                    <label for="femur-proximal-canal">Femur Proximal Canal</label>
+                    <input class="landmark-points"  type="radio" id="femur-proximal-canal" name="landmark-pt" value="femur-proximal-canal"/>
+                </li>
+
+                <li>
+                    <label for="femur-distal-canal">Femur Distal Canal</label>
+                    <input class="landmark-points"  type="radio" id="femur-distal-canal" name="landmark-pt" value="femur-distal-canal"/>
+                </li>
+                <li>
+                    <label for="medial-epicondyle">Medial Epicondyle</label>
+                    <input class="landmark-points"  type="radio" id="medial-epicondyle" name="landmark-pt" value="medial-epicondyl"/>
+                </li>
+                <li>
+                    <label for="lateral-epicondyle">Lateral Epicondyle</label>
+                    <input class="landmark-points"  type="radio" id="lateral-epicondyle" name="landmark-pt" value="lateral-epicondyle"/>
+                </li>
+
+                <li>
+                    <label for="distal-medial-pt">Distal Medial Pt</label>
+                    <input class="landmark-points"  type="radio" id="distal-medial-pt" name="landmark-pt" value="distal-medial-pt"/>
+                </li>
+                <li>
+                    <label for="distal-lateral-pt">Distal Lateral Pt</label>
+                    <input class="landmark-points"  type="radio" id="distal-lateral-pt" name="landmark-pt" value="distal-lateral-pt"/>
+                </li>
+                <li>
+                    <label for="posterior-medial-pt">Posterior Medial Pt</label>
+                    <input class="landmark-points"  type="radio" id="posterior-medial-pt" name="landmark-pt" value="posterior-medial-pt"/>
+                </li>
+                <li>
+                    <label for="posterior-lateral-pt">Posterior Lateral Pt</label>
+                    <input class="landmark-points"  type="radio" id="posterior-lateral-pt" name="landmark-pt" value="posterior-lateral-pt"/>
                 </li>
 
             </ul>
 
         </div>
-
-<!--        Renderer Canvas would be added here-->
-
-
     </main>
     <footer class="primary-footer">
         <p>Designed & Developed by <a target="_blank" href="https://www.linkedin.com/in/rohan-nayak-k-830091222/"><b>Rohan Nayak K</b></a></p>
