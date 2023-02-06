@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Assignment-Rohan Nayak</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script type="module" defer src="script.js"></script>
 </head>
 <body>
@@ -11,7 +15,7 @@
         <nav class="primary-nav">
             <div class="title-container">
                 <a href="/">
-                    <h1>Assignment</h1>
+                    <h3>Knee Preop Planning</h3>
 
                 </a>
             </div>
@@ -22,16 +26,15 @@
         </nav>
     </header>
     <main id="canvasContainer" class="primary-main">
-        <div class="control-panel">
-            <u>
-                <small>Knee Perop Planning</small>
-
-            </u>
-            <h2>Step 1</h2>
+        <aside class="control-panel">
             <h3>Create Landmarks (Points)</h3>
-            <button class="primary-btn" >Update</button>
-
             <ul class="radio-button-group">
+
+                <li>
+                    <button class="ui  primary button primary-btn" tabindex="0">
+                        Update
+                    </button>
+
                 <li>
                     <label for="femur-center">Femur Center</label>
                     <input class="landmark-points" type="radio" id="femur-center" name="landmark-pt" value="femur-center"/>
@@ -78,10 +81,64 @@
 
             </ul>
 
-        </div>
+        </aside>
+
+        <aside class="right-control-panel">
+            <ul>
+                <li>
+                    <p>Varcus Valgus Plane</p>
+                    <button id="varcusValgusDecrease">
+                        -
+                    </button>
+                    <span>1</span>
+                    <button id="varcusValgusIncrease">
+                        +
+                    </button>
+                </li>
+
+                <li>
+                    <p>Flexion/Extension Plane</p>
+                    <button id="flexionDecrease">
+                        -
+                    </button>
+                    <span>1</span>
+                    <button id="flexionIncrease">
+                        +
+                    </button>
+                </li>
+
+                <li>
+                    <p>Distal Resection Plane</p>
+                    <button id="distalIDecrease">
+                        -
+                    </button>
+                    <span>1</span>
+                    <button id="distalIncrease">
+                        +
+                    </button>
+                </li>
+
+                <li>
+                    <p> Resection </p>
+                    <div class="ui fitted toggle checkbox">
+                        <input id="resectionToggle" type="checkbox">
+                        <label></label>
+                    </div>
+
+                </li>
+            </ul>
+
+
+
+
+
+
+
+
+        </aside>
     </main>
     <footer class="primary-footer">
-        <p>Designed & Developed by <a target="_blank" href="https://www.linkedin.com/in/rohan-nayak-k-830091222/"><b>Rohan Nayak K</b></a></p>
+        <p>Prototype Designed & Developed by <a target="_blank" href="https://www.linkedin.com/in/rohan-nayak-k-830091222/"><b>Rohan Nayak K</b></a></p>
     </footer>
 
 </body>
