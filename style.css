@@ -132,3 +132,11 @@ button{
     padding: 2px;
     cursor: pointer;
 }
+
+
+.css-2d-label{
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    margin-top: -1em;
+}

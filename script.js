@@ -129,6 +129,7 @@ export const initScene = async () => {
         return isAdded
     }
 
+    //For updating point position real time for landmark crearion prototype
     let points={
         femurCenter:null,
         hipCenter:null,
@@ -142,8 +143,7 @@ export const initScene = async () => {
         posteriorLateral:null,
     }
 
-
-
+    //Landmark positions
    let pointsPositons = [
 
        {
@@ -399,13 +399,19 @@ export const initScene = async () => {
     let flexionDecrease = document.getElementById('flexionDecrease')
 
     flexionIncrease.addEventListener('click',()=>{
-        //rotate in y axis
-        flexionPlane.rotateY(0.1)
+        //anterior line axis of rotation
+        // flexionPlane.rotateY(0.1)
+
+
+        flexionPlane.rotateOnAxis(anteriorLineNormal, 0.1)
 })
 
     flexionDecrease.addEventListener('click',()=>{
         //rotate in y axis
-        flexionPlane.rotateY(-0.1)
+        // flexionPlane.rotateY(-0.1)
+
+        flexionPlane.rotateOnAxis(new THREE.Vector3(0, anteriorLine.y, 0), -0.1)
+
     })
 
 
@@ -487,10 +493,16 @@ export const initScene = async () => {
     distalIncrease.addEventListener('click',()=>{
         distalResectionPlane.translateZ(0.1)
         distalValue.innerHTML = parseInt((distalValue.innerHTML))+1.0
+        distalMedialPointToDistalResectionPlaneLabel.element.innerHTML =
+            `<span style="color: red;" >Distal Medial :</span> ${parseInt((distalValue.innerHTML))+1.0} mm`
+
+
     })
     distalDecrease.addEventListener('click',()=>{
         distalResectionPlane.translateZ(-0.1)
         distalValue.innerHTML = parseInt((distalValue.innerHTML))-1.0
+        distalMedialPointToDistalResectionPlaneLabel.element.innerHTML =
+            `<span style="color: red;" >Distal Medial :</span> ${parseInt((distalValue.innerHTML))-1.0} mm`
 
     })
 
