@@ -115,14 +115,20 @@ input[type="radio"]{
 }
 
 
-.right-control-panel{
+.right-pos{
     position: absolute;
     right: 0;
-    width: 15vw;
-    color: white;
-    background: rgba(0,0,0,0.1);
 }
 
 button{
+    cursor: pointer;
+}
+
+.mask{
+    position: relative;
+    z-index: 4;
+    background: lightgrey;
+    pointer-events: none;
+    padding: 2px;
     cursor: pointer;
 }

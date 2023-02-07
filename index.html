@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignment-Rohan Nayak</title>
-    <link rel="stylesheet" href="style.css">
+
+<!--    CDN for libraries-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!--    style sheet and script file-->
+    <link rel="stylesheet" href="style.css">
     <script type="module" defer src="script.js"></script>
 </head>
 <body>
@@ -20,8 +23,12 @@
                 </a>
             </div>
             <ul class="nav-links-container">
-                <li><a target="_blank" href="https://github.com/RohanNayakK/optellix--three-js-assignment">Source Code</a></li>
-                <li><a target="_blank" href="https://www.linkedin.com/in/rohan-nayak-k-830091222/">Profile</a></li>
+                <li><a target="_blank" href="https://github.com/RohanNayakK/optellix--three-js-assignment">
+                    <i class="external alternate icon"></i>
+                    Source Code</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/rohan-nayak-k-830091222/">
+                    <i class="user icon"></i>
+                    Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +36,6 @@
         <aside class="control-panel">
             <h3>Create Landmarks (Points)</h3>
             <ul class="radio-button-group">
-
                 <li>
                     <button class="ui  primary button primary-btn" tabindex="0">
                         Update
@@ -41,6 +47,7 @@
                 </li>
                 <li>
                     <label for="hip-center">Hip Center</label>
+
                     <input class="landmark-points"  type="radio" id="hip-center" name="landmark-pt" value="hip-center"/>
                 </li>
 
@@ -78,19 +85,24 @@
                     <label for="posterior-lateral-pt">Posterior Lateral Pt</label>
                     <input class="landmark-points"  type="radio" id="posterior-lateral-pt" name="landmark-pt" value="posterior-lateral-pt"/>
                 </li>
-
+                <li></li>
             </ul>
+            <h6 style="color: white" class="ui horizontal divider ">
+                <i class="info icon"></i>
+                Note
+            </h6>
+            <small>I have added all the points programmatically and this section is just for prototyping the landmark creation feature</small>
 
         </aside>
 
-        <aside class="right-control-panel">
+        <aside class="control-panel right-pos">
             <ul>
                 <li>
                     <p>Varcus Valgus Plane</p>
                     <button id="varcusValgusDecrease">
                         -
                     </button>
-                    <span>1</span>
+                    <span id="varcusValgusValue">1.0</span>
                     <button id="varcusValgusIncrease">
                         +
                     </button>
@@ -101,7 +113,7 @@
                     <button id="flexionDecrease">
                         -
                     </button>
-                    <span>1</span>
+                    <span id="flexionValue">1.0</span>
                     <button id="flexionIncrease">
                         +
                     </button>
@@ -109,10 +121,10 @@
 
                 <li>
                     <p>Distal Resection Plane</p>
-                    <button id="distalIDecrease">
+                    <button id="distalDecrease">
                         -
                     </button>
-                    <span>1</span>
+                    <span id="distalValue">10 </span>
                     <button id="distalIncrease">
                         +
                     </button>
@@ -121,21 +133,18 @@
                 <li>
                     <p> Resection </p>
                     <div class="ui fitted toggle checkbox">
-                        <input id="resectionToggle" type="checkbox">
-                        <label></label>
+                        <input id="resectionToggle" type="checkbox"/>
+                        <label for="resectionToggle"></label>
+
                     </div>
 
                 </li>
             </ul>
-
-
-
-
-
-
-
-
         </aside>
+        <div id="loader" class="ui active dimmer">
+            <div class="ui text loader">Loading...</div>
+            <p id="loadPercentage">0</p>
+        </div>
     </main>
     <footer class="primary-footer">
         <p>Prototype Designed & Developed by <a target="_blank" href="https://www.linkedin.com/in/rohan-nayak-k-830091222/"><b>Rohan Nayak K</b></a></p>

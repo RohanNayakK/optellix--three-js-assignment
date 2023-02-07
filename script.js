@@ -107,7 +107,8 @@ export const initScene = async () => {
                },
                (xhr) => {
                    //Loading progress
-                   // console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+                   let loadPercentageEle= document.getElementById("loadPercentage")
+                   loadPercentageEle.innerHTML = (xhr.loaded / xhr.total) * 100 + '% loaded'
                },
                (error) => {
                   reject(error)
@@ -127,6 +128,21 @@ export const initScene = async () => {
         })
         return isAdded
     }
+
+    let points={
+        femurCenter:null,
+        hipCenter:null,
+        femurProximalCanal:null,
+        femurDistalCanal:null,
+        medialEpicondyle:null,
+        lateralEpicondyle:null,
+        distalMedial:null,
+        distalLateral:null,
+        posteriorMedial:null,
+        posteriorLateral:null,
+    }
+
+
 
    let pointsPositons = [
 
@@ -308,15 +324,18 @@ export const initScene = async () => {
 
     let varcusValgusIncrease = document.getElementById('varcusValgusIncrease')
     let varcusValgusDecrease = document.getElementById('varcusValgusDecrease')
+    let varcusValgusValue = document.getElementById('varcusValgusValue')
 
     varcusValgusIncrease.addEventListener('click',()=>{
       //rotate in y axis
         varcusValgusPlane.rotateY(0.1)
+        varcusValgusValue.innerHTML = (varcusValgusPlane.rotation.y*10).toFixed(1)
     })
 
     varcusValgusDecrease.addEventListener('click',()=>{
         //rotate in y axis
         varcusValgusPlane.rotateY(-0.1)
+        varcusValgusValue.innerHTML = (varcusValgusPlane.rotation.y*10).toFixed(1)
     })
 
     //project anteriorLine on varcusValgusPlane
@@ -461,6 +480,20 @@ export const initScene = async () => {
 
     })
 
+    let distalIncrease = document.getElementById('distalIncrease')
+    let distalDecrease = document.getElementById('distalDecrease')
+    let distalValue = document.getElementById('distalValue')
+
+    distalIncrease.addEventListener('click',()=>{
+        distalResectionPlane.translateZ(0.1)
+        distalValue.innerHTML = parseInt((distalValue.innerHTML))+1.0
+    })
+    distalDecrease.addEventListener('click',()=>{
+        distalResectionPlane.translateZ(-0.1)
+        distalValue.innerHTML = parseInt((distalValue.innerHTML))-1.0
+
+    })
+
 
 
 
@@ -523,8 +556,12 @@ export const initScene = async () => {
 
 
     //Async Load STL
-    let femurMesh = await loadSTL('assets/3D/models/STL/Right_Femur.stl')
-    let tibiaMesh = await loadSTL('assets/3D/models/STL/Right_Tibia.stl')
+    let femurMesh = await loadSTL('/3D/models/STL/Right_Femur.stl')
+    let tibiaMesh = await loadSTL('/3D/models/STL/Right_Tibia.stl')
+
+    //remove loader
+    let loderScreen = document.getElementById('loader')
+    loderScreen.style.display = 'none'
 
 
     femurMesh.material.color.setHex(0x248b82)
@@ -567,7 +604,6 @@ export const initScene = async () => {
         lp.addEventListener('click',(e)=>{
             e.stopPropagation()
             activeLandmark = e.target.value
-            console.log(isTrasformMode)
             if(isLandMarkAdded(activeLandmark)){
                 isTrasformMode = true
                 //Remove transform controls from last active landmark
